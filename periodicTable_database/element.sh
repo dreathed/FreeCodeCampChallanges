@@ -17,7 +17,7 @@ fi
 
 if [[ ! -z $ELEMENT ]]
 then
-read ROW ATOMIC_NUMBER SYMBOL NAME ATOMIC_MASS MELTING_POINT BOILING_POINT TYPE_TRUE <<< "$(echo $ELEMENT | sed "s/|/ /g")"
+read ROW ATOMIC_NUMBER SYMBOL NAME ATOMIC_MASS MELTING_POINT BOILING_POINT TYPE_TRUE <<< $(echo $ELEMENT | sed "s/|/ /g")
 echo "The element with atomic number $ATOMIC_NUMBER is $NAME ($SYMBOL). It's a $TYPE_TRUE, with a mass of $ATOMIC_MASS amu. $NAME has a melting point of $MELTING_POINT celsius and a boiling point of $BOILING_POINT celsius."
 else
 echo "I could not find that element in the database."
